@@ -22,22 +22,42 @@
         }
 
         main {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        section {
+            flex: 1 1 45%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
         }
 
         h2 {
             color: #004080;
-            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        h2 span {
+            font-size: 26px;
+            margin-right: 10px;
         }
 
         .card {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fdfdfd;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #004080;
+            border-radius: 4px;
+            font-size: 16px;
         }
 
         footer {
@@ -45,6 +65,17 @@
             padding: 15px;
             background: #eee;
             font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* ✅ Responsive adjustments */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            section {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -55,19 +86,31 @@
     </header>
 
     <main>
+        <!-- Left Column: You Said -->
         <section>
-            <h2>You Said</h2>
+            <h2><span>🔊</span>You Said</h2>
             <div class="card">
-                <p>VLE navigation is difficult when moving between unit course and eBook reading.</p>
+                VLE navigation is difficult when moving between unit course and eBook reading.
             </div>
             <div class="card">
-                <p>VLE navigation is difficult when moving between unit course and assessment course.</p>
+                VLE navigation is difficult when moving between unit course and assessment course.
             </div>
         </section>
 
+        <!-- Right Column: We Did -->
         <section>
-            <h2>We Did</h2>
+            <h2><span>✅</span>We Did</h2>
             <div class="card">
-                <p>For reading/eBook activities: Clicking the textbook link now opens in a new window, keeping the course open. Added a <strong>Return to Course</strong> button and quick link for easy navigation.</p>
+                For reading/eBook activities: Clicking the textbook link now opens in a new window, keeping the course open. Added a <strong>Return to Course</strong> button and quick link for easy navigation.
             </div>
             <div class="card">
+                For assessment courses: Assessment course opens in a new window from the unit course. Added a <strong>Back to Unit Tab</strong> button for quick navigation between courses.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Your Institution | Built for demo purposes</p>
+    </footer>
+</body>
+</html>
